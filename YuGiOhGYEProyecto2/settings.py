@@ -37,11 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.comoSejuega',
-    'apps.estadisticas',
-    'apps.galeriaCartas',
-    'apps.productos',
-    'apps.torneosYtiendas',
+    'apps.ygoapp',
+    'apps.jugador',
+    'apps.comentario',
+    'apps.sugerencia',
+    'apps.grupo',
+    'apps.carta',
+    'apps.sugerencia',
+    'apps.producto',
 
 ]
 
