@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 <html>
 	<head>
@@ -10,7 +12,8 @@
 		<meta name="autores" content="Alex Ferrín, Julio Larrea"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}" />
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
@@ -53,7 +56,7 @@
 			<div class="product-listing" id="producto1">
 				<div class="row">
 					<div class="col-md-3 col-xs-3">
-						<img src="img/COTD-BoosterEN.png" alt="COTD" class="product-image">
+						<img src="/static/img/COTD-BoosterEN.png" alt="COTD" class="product-image">
 					</div>
 					<div class="col-md-9 col-xs-9">
 						<p class="product-title">Código de Duelista - Sobre de Expansión.</p>
@@ -65,7 +68,7 @@
 			<div class="product-listing" id="producto2">
 				<div class="row">
 					<div class="col-md-3 col-xs-3">
-						<img src="img/PEVO-BoosterEN.png" alt="PEVO" class="product-image">
+						<img src="/static/img/PEVO-BoosterEN.png" alt="PEVO" class="product-image">
 					</div>
 					<div class="col-md-9 col-xs-9">
 						<p class="product-title">Evolución del Péndulo - Sobre de Expansión.</p>
@@ -77,7 +80,7 @@
 			<div class="product-listing" id="producto3">
 				<div class="row">
 					<div class="col-md-3 col-xs-3">
-						<img src="img/MACR-BoosterEN.png" alt="MACR" class="product-image">
+						<img src="/static/img/MACR-BoosterEN.png" alt="MACR" class="product-image">
 					</div>
 					<div class="col-md-9 col-xs-9">
 						<p class="product-title">Crisis Máxima - Sobre de Expansión.</p>
@@ -89,7 +92,7 @@
 			<div class="product-listing" id="producto4">
 				<div class="row">
 					<div class="col-md-3 col-xs-3">
-						<img src="img/RATE-BoosterEN.png" alt="RATE" class="product-image">
+						<img src="/static/img/RATE-BoosterEN.png" alt="RATE" class="product-image">
 					</div>
 					<div class="col-md-9 col-xs-9">
 						<p class="product-title">Tempestad Furiosa - Sobre de Expansión.</p>
@@ -115,7 +118,7 @@
 							</div>
 						</div>
 					</div>
-					<img src="img/vrains.gif" alt="vrainsGif" class="gif">
+					<img src="/static/img/vrains.gif" alt="vrainsGif" class="gif">
 					<p class="ygo">No te pierdas la nueva serie YUGIOH VRAINS!! disponible desde el 10/05/17 INTO THE VRAINS!</p>
 				</div>
 			</div>
@@ -155,9 +158,9 @@
       </div>
 	</div>
 	<div class="container content-box follow">
-		<p>Síguenos en: <img src="./img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
-		<img src="./img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">
-		<img src="./img/youtube2-128.png" alt="youtubeIcon" class="icon-inline" height="32" width="32">
+		<p>Síguenos en: <img src="/static/img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
+		<img src="/static/img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">
+		<img src="/static/img/youtube2-128.png" alt="youtubeIcon" class="icon-inline" height="32" width="32">
 		</p>
 		<p>*Los íconos no están habilitados.</p>
 	</div>
