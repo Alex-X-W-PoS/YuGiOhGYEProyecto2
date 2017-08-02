@@ -5,4 +5,4 @@ django-cors-headers
 MySQL-python
 bcrypt
 Pillow
-django_forms_bootstraps
+django_forms_bootstrap
