@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Yu-Gi-Oh! Guayaquil</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="descripción" content="Página de estadísticas de Yu-Gi-Oh! Guayaquil"/>
+		<meta name="autores" content="Alex Ferrín, Julio Larrea"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/estiloestadistica.css' %}">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://d3js.org/d3.v3.min.js"></script>
+	</head>
+	<body>
+		<div class="navbar-wrapper">
+	      <div class="container" id="nav-container">
+
+	        <nav class="navbar navbar-inverse">
+				<div class="navbar-header">
+	              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	                <span class="sr-only">Toggle navigation</span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	              </button>
+				  <p class="navbar-brand hideOnNormal">Barra Navegación</p>
+	            </div>
+	            <div id="navbar" class="navbar-collapse collapse">
+	              <ul class="nav nav-pills nav-justified">
+	                <li><a href="{% url 'home'%}">Principal</a></li>
+					<li><a href="{% url 'productos'%}">Productos</a></li>
+					<li><a href="{% url 'torneos'%}">Torneos</a></li>
+					<li><a href="{% url 'timeline'%}">Evolución del Juego</a></li>
+					<li><a href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
+					<li class="active"><a href="#">Estadísticas</a></li>
+					<li><a href="{% url 'contactenos'%}">Contáctenos</a></li>
+	              </ul>
+	            </div>
+	        </nav>
+	      </div>
+	    </div>
+		<div class="container" id="content-container">
+		<div class="row">
+        <div class="col-md-6 content-box col-xs-11">
+			<div class="titulo">
+				<p>National 2017 Guayaquil Reporte de Decks 250 jugadores</p>
+			</div>
+			<div class="lista-productos">
+			<div class="product-listing" id="producto1">
+				<div class="row">
+					<div class="col-md-3 col-xs-3">
+						<img src="/static/img/truedraco.jpg" alt="COTD" class="product-image">
+					</div>
+					<div class="col-md-9 col-xs-9">
+						<p class="product-title">True Draco</p>
+						<br>
+						<p>60 jugadores</p>
+					</div>
+				</div>
+			</div>
+			<div class="product-listing" id="producto2">
+				<div class="row">
+					<div class="col-md-3 col-xs-3">
+						<img src="/static/img/zoodiac.jpg" alt="PEVO" class="product-image">
+					</div>
+					<div class="col-md-9 col-xs-9">
+						<p class="product-title">Mono Zoodiac.</p>
+						<br>
+						<p>80 jugadores</p>
+					</div>
+				</div>
+			</div>
+			<div class="product-listing" id="producto3">
+				<div class="row">
+					<div class="col-md-3 col-xs-3">
+						<img src="/static/img/dinosaur.jpg" alt="MACR" class="product-image">
+					</div>
+					<div class="col-md-9 col-xs-9">
+						<p class="product-title">True King Dinosaur</p>
+						<br>
+						<p>50 jugadores</p>
+					</div>
+				</div>
+			</div>
+			<div class="product-listing" id="producto4">
+				<div class="row">
+					<div class="col-md-3 col-xs-3">
+						<img src="/static/img/yang.jpg" alt="RATE" class="product-image">
+					</div>
+					<div class="col-md-9 col-xs-9">
+						<p class="product-title">Yang Zing</p>
+						<br>
+						<p>20 jugadores</p>
+					</div>
+				</div>
+			</div>
+			<div class="product-listing" id="producto4">
+				<div class="row">
+					<div class="col-md-3 col-xs-3">
+						
+					</div>
+					<div class="col-md-9 col-xs-9">
+						<p class="product-title">Otros decks</p>
+						<br>
+						<p>40 jugadores</p>
+					</div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-xs-5 hideOnMobile">
+			<div class="contenedor">
+					<p class="ygo" style="margin-bottom: 80px;">Reporte de los Decks mas utilizados en torneos.</p>
+				<div class="estadistica">
+					
+					
+				</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="container content-box follow">
+		<p>Síguenos en: <img src="/static/img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
+		<img src="/static/img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">
+		<img src="/static/img/youtube2-128.png" alt="youtubeIcon" class="icon-inline" height="32" width="32">
+		</p>
+		<p>*Los íconos no están habilitados.</p>
+	</div>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	    <script type="text/javascript" src="/static/js/barras.js"></script>
+	    <!-- Include all compiled plugins (below), or include individual files as needed -->
+	    <script src="../js/bootstrap.min.js"></script>
+	</body>
+</html>
