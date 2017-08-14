@@ -17,6 +17,7 @@ class Producto(models.Model):
     codigo = models.CharField(primary_key=True,max_length=4)
     nombre = models.CharField(max_length=30)
     tipo = models.CharField(max_length=30, choices=TIPO, default='sobre_expansion')
+    fecha_salida = models.DateField()
     url = models.TextField()
 
     class Meta:

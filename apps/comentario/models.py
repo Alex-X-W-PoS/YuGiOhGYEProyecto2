@@ -14,3 +14,11 @@ class Comentario(models.Model):
     
     class Meta:
         db_table = 'comentario'
+
+class Tema(models.Model):
+    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    descripcion = models.CharField(max_length=60)
+    fecha = models.DateField()
+
+    class Meta:
+        db_table = 'tema'
