@@ -51,7 +51,7 @@ $(document).ready(function(){
 				div5.setAttribute("class","col-md-3 col-xs-3");
 				let imagen = document.createElement("img");
 				imagen.setAttribute("src",json[i].fields.url);
-				imagen.setAttribute("alt",json[i].fields.codigo);
+				imagen.setAttribute("alt",json[i].pk);
 				imagen.setAttribute("class","product-image center-block");
 				div3.appendChild(imagen);
 				let p = document.createElement("p");
@@ -65,7 +65,7 @@ $(document).ready(function(){
 				div4.appendChild(br);
 				//div4.appendChild(p1);
 				let boton = document.createElement("button");
-				boton.setAttribute("id",json[i].fields.codigo);
+				boton.setAttribute("id",json[i].pk);
 				boton.setAttribute("type","button");
 				boton.setAttribute("class","btn btn-primary btn-block bouton-image monBouton");
 				boton.innerHTML="<span>Lista de Cartas</span>";
@@ -73,7 +73,9 @@ $(document).ready(function(){
 				//	boton.onclick = function () { alert("Este sobre no ha salido en el país aún.\nLo actualizaremos cuando llegue.");};//esto debo cambiarlo luego :V
 				//}
 				//else {
-				//	boton.onclick = function () { location.replace("https://alex-x-w-pos.github.io/ProyectoYuGiOhGYE/galeriaCartas/galeriaCartas" + i + ".html");};//esto debo cambiarlo luego :V
+					boton.onclick = function (e) { 
+					location.assign("http://127.0.0.1:8000/listaCartas/get/?identificacion=" + json[i].pk);  
+					};//esto debo cambiarlo luego :V
 				//}
 				div5.appendChild(boton);
 				div2.appendChild(div3);

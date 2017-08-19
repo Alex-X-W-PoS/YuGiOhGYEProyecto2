@@ -3,7 +3,7 @@ from django.conf.urls import include, url
 from apps.views import home, timeline, howToPlay, estadisticas,contactenos
 from apps.producto.views import productos, crearProducto, ajax_get_producto
 from apps.torneo.views import torneos
-from apps.carta.views import crearCarta
+from apps.carta.views import crearCarta, listaCartas
 
 urlpatterns = [
     url(r'^$', home, name = 'home'),
@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^agregarProducto$',crearProducto, name = 'crearProducto'),
     url(r'^productos/get/', ajax_get_producto),
     url(r'^agregarCarta$',crearCarta, name = 'crearCarta'),
+    url(r'^listaCartas/get/',listaCartas, name = 'listaCarta'),
 ]
