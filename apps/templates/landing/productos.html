@@ -12,8 +12,9 @@
 		{% load static %}
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estiloproducto.css' %}">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
 	</head>
 	<body>
 	<div class="navbar-wrapper">
@@ -54,16 +55,16 @@
 			<div class="col-md-12 content-box">
 				<div class="row">
 					<div class="col-md-4 button-column">
-						<button type="button" class="btn btn-primary btn-block" id="sobre-expansion">Sobres de Expansión</button>
-						<button type="button" class="btn btn-primary btn-block" id="latas">Latas</button>
+						<button type="button" class="btn btn-primary btn-block" id="sobre_expansion">Sobres de Expansión</button>
+						<button type="button" class="btn btn-primary btn-block" id="lata">Latas</button>
 					</div>
 					<div class="col-md-4 button-column">
-						<button type="button" class="btn btn-primary btn-block" id="caja-ed-especial">Cajas Edición Especial</button>
-						<button type="button" class="btn btn-primary btn-block" id="sobre-duelista">Sobres de Duelista</button>
+						<button type="button" class="btn btn-primary btn-block" id="caja_ed_especial">Cajas Edición Especial</button>
+						<button type="button" class="btn btn-primary btn-block" id="sobre_duelista">Sobres de Duelista</button>
 					</div>
 					<div class="col-md-4 button-column">
-						<button type="button" class="btn btn-primary btn-block" id="barajas-principiante">Barajas de Principiante</button>
-						<button type="button" class="btn btn-primary btn-block" id="barajas-estructura">Barajas de Estructura</button>
+						<button type="button" class="btn btn-primary btn-block" id="baraja_principiante">Barajas de Principiante</button>
+						<button type="button" class="btn btn-primary btn-block" id="baraja_estructura">Barajas de Estructura</button>
 					</div>
 				</div>
 			</div>
@@ -84,9 +85,7 @@
 	
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
-	<script src="js/consultaProducto.js"></script>
+	<script type="text/javascript" src="/static/js/consultaProducto.js"></script>
 	</body>
 </html>
