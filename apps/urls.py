@@ -2,9 +2,10 @@ from django.conf.urls import include, url
 
 from apps.views import home, timeline, howToPlay, estadisticas,contactenos
 from apps.producto.views import productos, crearProducto, ajax_get_producto
-from apps.torneo.views import torneos
+from apps.torneo.views import torneos, listarTorneosIndividuales
 from apps.carta.views import crearCarta, listaCartas
 from apps.ygoapp.views import crearUsuario
+from apps.torneo_grupal.views import listarTorneosGrupales
 
 urlpatterns = [
     url(r'^$', home, name = 'home'),
@@ -19,4 +20,6 @@ urlpatterns = [
     url(r'^agregarCarta$',crearCarta, name = 'crearCarta'),
     url(r'^listaCartas/get/',listaCartas, name = 'listaCarta'),
     url(r'^agregarUsuario$',crearUsuario, name = 'crearUsuario'),
+    url(r'^torneos_individuales/get/', listarTorneosIndividuales),
+    url(r'^torneos_grupales/get/', listarTorneosGrupales),
 ]

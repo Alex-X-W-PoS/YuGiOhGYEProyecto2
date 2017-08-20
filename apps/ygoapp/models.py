@@ -35,8 +35,13 @@ class Usuario(models.Model):
 	rol = models.CharField(max_length=30, choices=ROLES, default='jugador')
 	ranking = models.CharField(max_length=50, choices=RANKING, default='novato')
 
+	def __str__(self):
+                return self.usuario.username
+
 	class Meta:
             db_table = 'usuario'
+
+        
 
 	
 

@@ -19,6 +19,7 @@ class Producto(models.Model):
     tipo = models.CharField(max_length=30, choices=TIPO, default='sobre_expansion')
     fecha_salida = models.DateField()
     url = models.TextField()
+    descripcion = models.TextField()
 
     class Meta:
         db_table = 'producto'

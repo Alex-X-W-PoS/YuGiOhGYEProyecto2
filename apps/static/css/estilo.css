@@ -8,9 +8,8 @@
 
 body {
 	background-image: url("../img/fondo.jpg");
-	font-family: Georgia;
+	font-family: ygo;
     /* Full height */
-
 
     /* Center and scale the image nicely */
     background-position: top;
@@ -46,7 +45,7 @@ a {
 }
 
 .ygo {
-	size: 1.2em;
+	font-size: 1.3em;
 	text-align: center;
 }
 
@@ -61,6 +60,7 @@ a {
 	color: white;
 	border-bottom: 1px solid white;
 	margin-bottom: 5px;
+	font-size: 1.7em;
 }
 
 img.product-image {
@@ -75,6 +75,7 @@ img.product-image {
 
 .product-title {
 	color: #75dae9;
+	font-size: 1.7em;
 }
 
 .descripcion{
@@ -82,11 +83,12 @@ img.product-image {
 	font-weight: bold;
 	text-align: center;
 	margin-right: 170px;
+	font-size: 1.7em;
 }
 
 .descripcion-detalle{
 	margin-right: 170px;
-
+	font-size: 1.6em;
 }
 
 .tienda{
@@ -102,6 +104,7 @@ img.product-image {
 
 .product-description {
 	color: white;
+	font-size: 1.7em;
 }
 
 .product-listing {
@@ -146,6 +149,7 @@ p {
 	width: 70%;
 	margin-bottom: 20pt;
 	padding: 10pt;
+	font-size: 1.3em;
 }
 
 .principiante{

@@ -16,7 +16,7 @@ Decks =(('zoodiac', 'zoodiac'),
         ('otros', 'otros'))
 
 class Ficha_Individual(models.Model):
-    id_ficha = models.CharField(primary_key = True,max_length=10)
+    id_ficha = models.AutoField(primary_key = True)
     torneo = models.ForeignKey(Torneo_Individual,on_delete=models.CASCADE)
     duelista = models.ForeignKey(Duelista,on_delete = models.CASCADE)
     deck = models.CharField(max_length=30, choices=Decks, default='otros')
