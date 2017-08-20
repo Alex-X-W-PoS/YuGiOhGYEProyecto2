@@ -58,7 +58,7 @@
 			</div>
       </div>
 	</div>
-	<div class="container">
+	<div class="container contenedor">
 		<table>
 			<tr>
 				<th class="product-title">Nombre</th>
@@ -76,7 +76,7 @@
 			</tr>
 		</table>
 	</div>
-	{% if rol == "moderador" %}
+	{% if rol == "administrador" %}
 	<div class="container" id="content-container">
 		<div class="row">
 			<div class="col-md-3 content-box title-container">
@@ -87,10 +87,10 @@
 			<div class="col-md-12 content-box">
 				<div class="row">
 					<div class="col-md-6 button-column">
-						<a href="{% url 'editar_torneo_individual'%}" class="btn btn-primary btn-block mod_button" id="editar">Editar Torneo</button>
+						<button type="submit" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/torneoIndividualEditar/{{ torneo.id_torneo }}';" id="editar">Editar Torneo</button>
 					</div>
 					<div class="col-md-6 button-column">
-						<a href="{% url 'eliminar_torneo_individual'%}" class="btn btn-primary btn-block mod_button" id="eliminar">Eliminar Torneo</button>
+						<button type="submit" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/torneoIndividualEliminar/{{ torneo.id_torneo }}';" id="eliminar">Eliminar Torneo</button>
 					</div>
 				</div>
 			</div>

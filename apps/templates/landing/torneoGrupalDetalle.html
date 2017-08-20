@@ -53,25 +53,30 @@
 		<div class="row">
 			<div class="col-md-2 content-box title-container">
 				<div class="titulo">
-					<p>Torneos:</p>
-				</div>
-			</div>
-			<div class="col-md-12 content-box">
-				<div class="row">
-					<div class="col-md-6 button-column">
-						<button type="button" class="btn btn-primary btn-block normal_button" id="individual">Torneos Individuales</button>
-					</div>
-					<div class="col-md-6 button-column">
-						<button type="button" class="btn btn-primary btn-block normal_button" id="grupal">Torneos Grupales</button>
-					</div>
+					<p>Detalle Torneo:</p>
 				</div>
 			</div>
       </div>
 	</div>
-	<div class="container" id="listado-seccion-productos">
-		<!-- Esta sección se llenará cuando se haga click en algun boton de producto -->
+	<div class="container contenedor">
+		<table>
+			<tr>
+				<th class="product-title">Nombre</th>
+				<th class="product-title">Fecha y Hora Inicio</th>
+				<th class="product-title">Fecha y Hora Fin</th>
+				<th class="product-title">Espacios Disponibles</th>
+				<th class="product-title">Grupo Ganador</th>
+			</tr>
+			<tr>
+				<td class="product-description">{{ torneo.nombre }}</td>
+				<td class="product-description">{{ torneo.fecha_hora_inicio }}</td>
+				<td class="product-description">{{ torneo.fecha_hora_fin }}</td>
+				<td class="product-description">{{ torneo.numero_participantes_disponibles }}</td>
+				<td class="product-description">{{ torneo.grupo_ganador }}</td>
+			</tr>
+		</table>
 	</div>
-	{% if mod == True %}
+	{% if rol == "administrador" %}
 	<div class="container" id="content-container">
 		<div class="row">
 			<div class="col-md-3 content-box title-container">
@@ -82,10 +87,28 @@
 			<div class="col-md-12 content-box">
 				<div class="row">
 					<div class="col-md-6 button-column">
-						<button type="button" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/torneoIndividualCrear';" id="individual">Crear Torneo Individual</button>
+						<button type="submit" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/torneoGrupalEditar/{{ torneo.id_torneo }}';" id="editar">Editar Torneo</button>
 					</div>
 					<div class="col-md-6 button-column">
-						<button type="button" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/torneoGrupalCrear';" id="grupal">Crear Torneo Grupal</button>
+						<button type="submit" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/torneoGrupalEliminar/{{ torneo.id_torneo }}';" id="eliminar">Eliminar Torneo</button>
+					</div>
+				</div>
+			</div>
+      </div>
+	</div>
+	{% endif %}
+	{% if rol == "jugador" %}
+	<div class="container" id="content-container">
+		<div class="row">
+			<div class="col-md-3 content-box title-container">
+				<div class="titulo">
+					<p>Opciones de Duelista:</p>
+				</div>
+			</div>
+			<div class="col-md-12 content-box">
+				<div class="row">
+					<div class="col-md-6 button-column">
+						<a href="{% url 'inscribir_individual'%}" class="btn btn-primary btn-block mod_button" id="editar">Inscribirse</button>
 					</div>
 				</div>
 			</div>

@@ -16,6 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estiloproducto.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estilotorneo.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/estilocontactenos.css' %}">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		
 
@@ -53,45 +54,19 @@
 		<div class="row">
 			<div class="col-md-2 content-box title-container">
 				<div class="titulo">
-					<p>Torneos:</p>
-				</div>
-			</div>
-			<div class="col-md-12 content-box">
-				<div class="row">
-					<div class="col-md-6 button-column">
-						<button type="button" class="btn btn-primary btn-block normal_button" id="individual">Torneos Individuales</button>
-					</div>
-					<div class="col-md-6 button-column">
-						<button type="button" class="btn btn-primary btn-block normal_button" id="grupal">Torneos Grupales</button>
-					</div>
+					<p>Crear Torneo:</p>
 				</div>
 			</div>
       </div>
 	</div>
-	<div class="container" id="listado-seccion-productos">
-		<!-- Esta sección se llenará cuando se haga click en algun boton de producto -->
+	<div class="container contenedor content-box form-filler">
+		<form class="form-horizontal" name="torneo_grp" id="contact" method="post">
+  {% csrf_token %}
+	{{ form.as_ul }}
+	<button type="submit" class="btn btn-default" id="submit">Crear</button>
+  </form>
 	</div>
-	{% if mod == True %}
-	<div class="container" id="content-container">
-		<div class="row">
-			<div class="col-md-3 content-box title-container">
-				<div class="titulo">
-					<p>Opciones de Moderador:</p>
-				</div>
-			</div>
-			<div class="col-md-12 content-box">
-				<div class="row">
-					<div class="col-md-6 button-column">
-						<button type="button" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/torneoIndividualCrear';" id="individual">Crear Torneo Individual</button>
-					</div>
-					<div class="col-md-6 button-column">
-						<button type="button" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/torneoGrupalCrear';" id="grupal">Crear Torneo Grupal</button>
-					</div>
-				</div>
-			</div>
-      </div>
-	</div>
-	{% endif %}
+	
 	<div class="container content-box follow">
 		<p>Síguenos en: <img src="/static/img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
 		<img src="/static/img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">

@@ -209,7 +209,7 @@ $(document).ready(function(){
 				//}
 				//else {
 					boton.onclick = function (e) { 
-					location.assign("http://127.0.0.1:8000/torneoIGrupalDetalles/get/?identificacion=" + json[i].pk);  
+					location.assign("http://127.0.0.1:8000/torneoGrupalDetalles/get/?identificacion=" + json[i].pk);  
 					};//esto debo cambiarlo luego :V
 				//}
 			td6.appendChild(boton);
