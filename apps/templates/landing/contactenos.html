@@ -59,41 +59,11 @@
       </div>
 	</div>
 	<div class="container content-box form-filler">
-  <form class="form-horizontal" name="contacto" id="contact" method="get">
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="name">Nombre:</label>
-      <div class="col-sm-4">
-        <input type="text" class="form-control" id="name" name="name" required="required">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email:</label>
-      <div class="col-sm-4">          
-        <input type="email" class="form-control" id="email" placeholder="Ingrese e-mail" name="email" required="required">
-      </div>
-    </div>
-	<div class="form-group">
-      <label class="control-label col-sm-2" for="motive">Motivo:</label>
-      <div class="col-sm-4">          
-        <select class="form-control" name="motivos" id="motive">
-			<option value="volvo">Queja</option>
-			<option value="saab">Sugerencia</option>
-			<option value="fiat">Pregunta de Productos</option>
-			<option value="audi">Otros</option>
-		</select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="descripcion">Descripción:</label>
-      <div class="col-sm-8">          
-        <textarea class="form-control" rows="5" id="descripcion" maxlength="400"></textarea>
-      </div>
-    </div>
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Enviar</button>
-      </div>
-    </div>
+  <form class="form-horizontal" name="contacto" id="contact" method="post">
+	{% csrf_token %}
+			{{ form.as_p }}
+	<button type="submit">Agregar</button>
+    
   </form>
 	</div>
 	
