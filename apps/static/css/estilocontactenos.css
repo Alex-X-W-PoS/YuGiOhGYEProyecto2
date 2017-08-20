@@ -1,11 +1,18 @@
 body {
 	background-size:cover;
-
 }
 
 .content-box {
 	padding: 0;
 	border-bottom: 1px solid white;
+}
+
+.form-control {
+	font-size:	1.5em;
+}
+
+.btn {
+	font-size:	1.7em;
 }
 
 .titulo {
@@ -18,17 +25,16 @@ body {
 
 .form-filler{
 	padding: 10pt;
-	background-color: #3b3b3b;
 	width: 60%;
 }
 
 .title-container {
-		background-color: #a4a4a4;
 		
 }
 
 label {
 	color: white;
+	font-size:	1.6em;
 }
 
 .follow{

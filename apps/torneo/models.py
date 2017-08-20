@@ -6,11 +6,15 @@ from django.db import models
 # Create your models here.
 
 class Torneo_Individual(models.Model):
-    id_torneo = models.CharField(primary_key=True,max_length=10)
+    id_torneo = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=30)
     fecha_hora_inicio = models.DateTimeField()
     fecha_hora_fin = models.DateTimeField()
-    ganador = models.CharField(max_length=50)
+    numero_participantes_disponibles = models.IntegerField()
+    ganador = models.CharField(max_length=50,default='No hay')
+
+    def __str__(self):
+        return self.nombre
 
     class Meta:
         db_table = 'torneo_individual'

@@ -11,6 +11,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 def productos(request):
+    if request.user.is_authenticated:
+        print(request.session['rol'])
     return render(request,'landing/productos.html',{})
 
 def crearProducto(request):

@@ -16,15 +16,15 @@ Decks =(('zoodiac', 'zoodiac'),
         ('otros', 'otros'))
 
 class Ficha_Grupal(models.Model):
-    id_ficha = models.CharField(primary_key = True,max_length=10)
+    id_ficha = models.AutoField(primary_key = True)
     torneo = models.ForeignKey(Torneo_Grupal,on_delete=models.CASCADE)
     grupo = models.ForeignKey(Grupo, on_delete=models.CASCADE)
     jugador1 = models.CharField(max_length=40)
     deck1 = models.CharField(max_length=30, choices=Decks, default='otros')
     jugador2 = models.CharField(max_length=40)
     deck2 = models.CharField(max_length=30, choices=Decks, default='otros')
-    jugador3 = models.CharField(max_length=40, null=True)
-    deck3 = models.CharField(max_length=30, choices=Decks, default='otros',null=True)
+    jugador3 = models.CharField(max_length=40)
+    deck3 = models.CharField(max_length=30, choices=Decks, default='otros')
     
     class Meta:
         db_table = 'ficha_grupal'

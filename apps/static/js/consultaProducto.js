@@ -38,7 +38,7 @@ $(document).ready(function(){
 		 cuerpo.style.backgroundSize = "contain";
 		 div_principal.setAttribute("class","container content-box contenedor");
 		 for (let i = 0; i<longitud;i++){
-		 console.log(json[i].fields.nombre);
+		 console.log(json[i].fields.descripcion);
 		 let div = document.createElement("div");
 				div.setAttribute("class","product-listing");
 				let div2 = document.createElement("div");
@@ -57,13 +57,13 @@ $(document).ready(function(){
 				let p = document.createElement("p");
 				p.setAttribute("class","product-title");
 				let p1 = document.createElement("p");
-				//p1.setAttribute("class","product-description");
+				p1.setAttribute("class","product-description");
 				p.innerHTML = json[i].fields.nombre;
-				//p1.innerHTML = array[i].descripcion;
+				p1.innerHTML = json[i].fields.descripcion;
 				let br = document.createElement("br");
 				div4.appendChild(p);
 				div4.appendChild(br);
-				//div4.appendChild(p1);
+				div4.appendChild(p1);
 				let boton = document.createElement("button");
 				boton.setAttribute("id",json[i].pk);
 				boton.setAttribute("type","button");
