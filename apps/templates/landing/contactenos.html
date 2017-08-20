@@ -60,10 +60,29 @@
 	</div>
 	<div class="container content-box form-filler">
   <form class="form-horizontal" name="contacto" id="contact" method="post">
-	{% csrf_token %}
-			{{ form.as_p }}
-	<button type="submit">Agregar</button>
-    
+  {% csrf_token %}
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="motive">Motivo:</label>
+      <div class="col-sm-4">          
+        <select class="form-control" name="Motivo" id="motive">
+			<option value="Queja">Queja</option>
+			<option value="Sugerencia">Sugerencia</option>
+			<option value="Pregunta de Productos">Pregunta de Productos</option>
+			<option value="Otros">Otros</option>
+		</select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="descripcion">Descripción:</label>
+      <div class="col-sm-8">          
+        <textarea class="form-control" rows="5" id="descripcion" name="Descripcion" maxlength="400"></textarea>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Enviar</button>
+      </div>
+    </div>
   </form>
 	</div>
 	
