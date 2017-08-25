@@ -10,6 +10,8 @@ def home(request):
         usuario_log = Usuario.objects.get(usuario = user_logged)
         #print(usuario_log.rol)
         request.session['rol'] = usuario_log.rol
+        request.session['id'] = usuario_log.user_id
+        print(request.session['id'])
     data = Producto.objects.all().order_by('-fecha_salida')[:4]
     return render(request,'landing/landing.html',{'data': data})
 

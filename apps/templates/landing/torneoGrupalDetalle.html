@@ -76,7 +76,7 @@
 			</tr>
 		</table>
 	</div>
-	{% if rol == "administrador" %}
+	{% if rol == "moderador" %}
 	<div class="container" id="content-container">
 		<div class="row">
 			<div class="col-md-3 content-box title-container">
@@ -97,7 +97,7 @@
       </div>
 	</div>
 	{% endif %}
-	{% if rol == "jugador" %}
+	{% if rol == "jugador" and torneo.numero_participantes_disponibles > 0 %}
 	<div class="container" id="content-container">
 		<div class="row">
 			<div class="col-md-3 content-box title-container">

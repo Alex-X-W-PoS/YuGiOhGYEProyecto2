@@ -6,6 +6,7 @@ from apps.torneo.views import torneos, listarTorneosIndividuales, listarUnTorneo
 from apps.carta.views import crearCarta, listaCartas
 from apps.ygoapp.views import crearUsuario
 from apps.torneo_grupal.views import listarTorneosGrupales, listarUnTorneoGrupal, editarTorneoGrupal, eliminarTorneoGrupal, crearTorneoGrupal
+from apps.ficha_individual.views import crearFichaIndividual
 
 urlpatterns = [
     url(r'^$', home, name = 'home'),
@@ -30,4 +31,5 @@ urlpatterns = [
     url(r'^torneoGrupalEliminar/(?P<id>\d+)$',eliminarTorneoGrupal, name = 'eliminar_torneo_grupal'),
     url(r'^torneoIndividualCrear$',crearTorneoIndividual, name = 'crearTorneoIndividual'),
     url(r'^torneoGrupalCrear$',crearTorneoGrupal, name = 'crearTorneoGrupal'),
+    url(r'^registrarTorneoIndividual/(?P<id>\d+)$',crearFichaIndividual, name = 'ficha_torneo_individual'),
 ]
