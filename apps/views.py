@@ -18,6 +18,9 @@ def home(request):
 def timeline(request):
     return render(request,'landing/timeline.html',{})
 
+def inscripcion(request):
+    return render(request,'landing/inscripcionExitosa.html',{})
+
 def howToPlay(request):
     return render(request,'landing/comoSeJuega.html',{})
 

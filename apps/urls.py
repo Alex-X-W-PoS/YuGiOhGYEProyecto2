@@ -1,12 +1,13 @@
 from django.conf.urls import include, url
 
-from apps.views import home, timeline, howToPlay, estadisticas,contactenos
+from apps.views import home, timeline, howToPlay, estadisticas,contactenos, inscripcion
 from apps.producto.views import productos, crearProducto, ajax_get_producto
 from apps.torneo.views import torneos, listarTorneosIndividuales, listarUnTorneoIndividual, editarTorneoIndividual, eliminarTorneoIndividual, crearTorneoIndividual
 from apps.carta.views import crearCarta, listaCartas
 from apps.ygoapp.views import crearUsuario
 from apps.torneo_grupal.views import listarTorneosGrupales, listarUnTorneoGrupal, editarTorneoGrupal, eliminarTorneoGrupal, crearTorneoGrupal
 from apps.ficha_individual.views import crearFichaIndividual
+from apps.ficha_grupal.views import crearFichaGrupal, ingresarFichaGrupal
 
 urlpatterns = [
     url(r'^$', home, name = 'home'),
@@ -32,4 +33,7 @@ urlpatterns = [
     url(r'^torneoIndividualCrear$',crearTorneoIndividual, name = 'crearTorneoIndividual'),
     url(r'^torneoGrupalCrear$',crearTorneoGrupal, name = 'crearTorneoGrupal'),
     url(r'^registrarTorneoIndividual/(?P<id>\d+)$',crearFichaIndividual, name = 'ficha_torneo_individual'),
+    url(r'^registrarTorneoGrupal/(?P<id>\d+)$',crearFichaGrupal, name = 'ficha_torneo_grupal'),
+    url(r'^creacionFichaGrupal$',ingresarFichaGrupal, name = 'creacion_ficha_grupal'),
+    url(r'^inscripcionExitosa$', inscripcion, name= 'inscripcionExitosa'),
 ]

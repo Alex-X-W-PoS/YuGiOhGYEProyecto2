@@ -4,7 +4,7 @@ table{
 
 th{
 	text-align: center;
-	padding: 1em;
+
 }
 
 td{
@@ -45,4 +45,8 @@ select{
 .constant{
 	color: white;
 	font-size: 1.6em;
+}
+
+.center{
+	text-align: center;
 }

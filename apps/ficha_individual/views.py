@@ -17,7 +17,7 @@ def crearFichaIndividual(request,id):
             torneo = Torneo_Individual.objects.get(id_torneo=id)
             torneo.numero_participantes_disponibles -=1
             torneo.save()
-            return redirect('torneos')
+            return redirect('inscripcionExitosa')
     else:
         torneo = Torneo_Individual.objects.get(id_torneo=id)
         context = {}

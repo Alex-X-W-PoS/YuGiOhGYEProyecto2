@@ -16,6 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estiloproducto.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estilotorneo.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/estilocontactenos.css' %}">
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		
 
@@ -53,68 +54,20 @@
 		<div class="row">
 			<div class="col-md-2 content-box title-container">
 				<div class="titulo">
-					<p>Detalle Torneo:</p>
+					<p>Inscribirse en Torneo:</p>
 				</div>
 			</div>
       </div>
 	</div>
-	<div class="container contenedor">
-		<table>
-			<tr>
-				<th class="product-title">Nombre</th>
-				<th class="product-title">Fecha y Hora Inicio</th>
-				<th class="product-title">Fecha y Hora Fin</th>
-				<th class="product-title">Espacios Disponibles</th>
-				<th class="product-title">Grupo Ganador</th>
-			</tr>
-			<tr>
-				<td class="product-description">{{ torneo.nombre }}</td>
-				<td class="product-description">{{ torneo.fecha_hora_inicio }}</td>
-				<td class="product-description">{{ torneo.fecha_hora_fin }}</td>
-				<td class="product-description">{{ torneo.numero_participantes_disponibles }}</td>
-				<td class="product-description">{{ torneo.grupo_ganador }}</td>
-			</tr>
-		</table>
+	<div class="container contenedor content-box form-filler">
+		<form class="form-horizontal" name="torneo_ind" id="contact" method="post">
+		<p class="constant"> Torneo: {{ torneo }}</p>
+  {% csrf_token %}
+	{{ form.as_ul }}
+	<button type="submit" class="btn btn-default" id="submit">Inscribirse</button>
+  </form>
 	</div>
-	{% if rol == "moderador" %}
-	<div class="container modder" id="content-container">
-		<div class="row">
-			<div class="col-md-3 content-box title-container">
-				<div class="titulo">
-					<p>Opciones de Moderador:</p>
-				</div>
-			</div>
-			<div class="col-md-12 content-box">
-				<div class="row">
-					<div class="col-md-6 button-column">
-						<button type="submit" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/torneoGrupalEditar/{{ torneo.id_torneo }}';" id="editar">Editar Torneo</button>
-					</div>
-					<div class="col-md-6 button-column">
-						<button type="submit" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/torneoGrupalEliminar/{{ torneo.id_torneo }}';" id="eliminar">Eliminar Torneo</button>
-					</div>
-				</div>
-			</div>
-      </div>
-	</div>
-	{% endif %}
-	{% if rol == "jugador" and torneo.numero_participantes_disponibles > 0 %}
-	<div class="container modder" id="content-container">
-		<div class="row">
-			<div class="col-md-3 content-box title-container">
-				<div class="titulo">
-					<p>Opciones de Duelista:</p>
-				</div>
-			</div>
-			<div class="col-md-12 content-box">
-				<div class="row">
-					<div class="col-md-6 button-column">
-						<button type="submit" class="btn btn-primary btn-block mod_button" onclick="location.href='http://127.0.0.1:8000/registrarTorneoGrupal/{{ torneo.id_torneo }}';" id="inscribir">Inscribirse</button>
-					</div>
-				</div>
-			</div>
-      </div>
-	</div>
-	{% endif %}
+	
 	<div class="container content-box follow">
 		<p>Síguenos en: <img src="/static/img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
 		<img src="/static/img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">
