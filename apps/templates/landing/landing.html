@@ -46,11 +46,11 @@
 	
 	<div class="container" id="content-container">
 		<div class="row">
-        <div class="col-md-6 content-box col-xs-11">
-			<div class="titulo">
-				<p>Últimos productos</p>
+        <div class="col-md-6 col-xs-11">
+			<div>
+				<p class="descripcion_titular">Últimos productos</p>
 			</div>
-			<div class="lista-productos">
+			<div class="lista-productos content-box">
 			{% for producto in data %}
 			
 			<div class="product-listing" id="{{ producto.codigo }}">

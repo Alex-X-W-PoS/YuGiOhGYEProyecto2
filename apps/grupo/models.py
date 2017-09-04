@@ -12,8 +12,8 @@ class Grupo(models.Model):
     group_id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=30)
     fecha_creacion = models.DateField(auto_now_add=True)
-    imagen = models.ImageField(upload_to = 'apps/static/media/grupo/',
-                             default = 'apps/static/media/grupo/noimagen.jpg', null=True,
+    imagen = models.ImageField(upload_to = 'static/media/grupo/',
+                             default = 'static/media/grupo/noimagen.jpg', null=True,
                              blank=True, editable=True,
                              help_text="Foto")
     torneos_ganados = models.IntegerField(default=0)

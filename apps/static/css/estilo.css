@@ -50,15 +50,26 @@ a {
 }
 
 .content-box {
-	border: 1px solid white;
+	border: 1px solid gray;
 	padding: 0;
+}
+
+.descripcion_titular{
+	color: #75dae9;
+	text-align: center;
+	font-weight: bold;
+	border-top: 1px solid gray;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	margin-bottom: 0px;
+	font-size: 1.7em;
 }
 
 .titulo {
 	text-align: center;
 	font-weight: bold;
 	color: white;
-	border-bottom: 1px solid white;
+	/*border-bottom: 1px solid gray;*/
 	margin-bottom: 5px;
 	font-size: 1.7em;
 }
@@ -109,7 +120,7 @@ img.product-image {
 
 .product-listing {
 	padding: 10px;
-	border-bottom: 1px dotted white;
+	border-bottom: 1px dotted gray;
 }
 
 img.gif {
@@ -134,7 +145,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid white;
+    border: 1px solid gray;
 }
 
 td {
