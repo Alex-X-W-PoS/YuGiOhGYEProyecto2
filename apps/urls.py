@@ -8,6 +8,8 @@ from apps.ygoapp.views import crearUsuario
 from apps.torneo_grupal.views import listarTorneosGrupales, listarUnTorneoGrupal, editarTorneoGrupal, eliminarTorneoGrupal, crearTorneoGrupal
 from apps.ficha_individual.views import crearFichaIndividual
 from apps.ficha_grupal.views import crearFichaGrupal, ingresarFichaGrupal
+from apps.comentario.views import foro,crear_tema,tema
+from apps.grupo.views import grupo,crearGrupo,grupoEliminar, verLista
 
 urlpatterns = [
     url(r'^$', home, name = 'home'),
@@ -36,4 +38,11 @@ urlpatterns = [
     url(r'^registrarTorneoGrupal/(?P<id>\d+)$',crearFichaGrupal, name = 'ficha_torneo_grupal'),
     url(r'^creacionFichaGrupal$',ingresarFichaGrupal, name = 'creacion_ficha_grupal'),
     url(r'^inscripcionExitosa$', inscripcion, name= 'inscripcionExitosa'),
+    url(r'^foro$', foro, name= 'foro'),
+    url(r'^crear_tema$', crear_tema, name= 'crear_tema'),
+    url(r'^tema/(?P<id>\d+)$', tema, name= 'vertema'),
+    url(r'^grupo$', grupo, name= 'grupos'),
+    url(r'^eliminar_grupos/(?P<id>\d+)$', grupoEliminar, name= 'eliminar'),
+    url(r'^crearGrupo$', crearGrupo, name= 'crear_grupo'),
+    url(r'^lista/(?P<id>\d+)$', verLista, name= 'verLista'),
 ]

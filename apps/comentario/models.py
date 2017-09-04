@@ -8,8 +8,9 @@ from apps.ygoapp.models import Usuario
 
 class Tema(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
-    descripcion = models.CharField(max_length=60)
-    fecha = models.DateField()
+    titulo = models.CharField(max_length = 100,null =False)
+    descripcion = models.TextField(max_length =999)
+    fecha = models.DateField(auto_now=True)
 
     class Meta:
         db_table = 'tema'
@@ -17,11 +18,10 @@ class Tema(models.Model):
 class Comentario(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     contenido = models.TextField()
-    fecha = models.DateField()
-    hora = models.TimeField()
+    fecha = models.DateField(auto_now=True)
+    hora = models.TimeField(auto_now=True)
     tema = models.ForeignKey(Tema, on_delete=models.CASCADE)
     
     class Meta:
         db_table = 'comentario'
-
 
