@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Yu-Gi-Oh! Guayaquil</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="descripción" content="Página de contacto Yu-Gi-Oh! Guayaquil"/>
+		<meta name="autores" content="Alex Ferrín, Julio Larrea"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+		<link href="{% static 'css/estilo.css' %}" rel="stylesheet">
+		<link href="{% static 'css/modificaciones_boostrap.css' %}" rel="stylesheet">
+		<link href="{% static 'css/estilo_foro.css' %}" rel="stylesheet">
+		<link href="{% static 'css/estilo_crear.css' %}" rel="stylesheet">
+	</head>
+	<body>
+	<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi cuenta<span class="caret"></span></button> 
+      <ul class="dropdown-menu"> 
+        <li><a href="#">Registrar</a></li>
+          <li><a href="#">Iniciar Sesion</a></li> 
+      </ul> 
+    </div>
+	<div class="navbar-wrapper">
+      <div class="container" id="nav-container">
+
+        <nav class="navbar navbar-inverse">
+			<div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+			  <p class="navbar-brand hideOnNormal">Barra Navegación</p>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav nav-pills nav-justified">
+                <li><a href="{% url 'home'%}">Principal</a></li>
+                <li><a href="{% url 'productos'%}">Productos</a></li>
+                <li><a href="{% url 'torneos'%}">Torneos</a></li>
+        <li><a href="{% url 'timeline'%}">Evolución del Juego</a></li>
+        <li><a href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
+        <li class="active"><a href="#">Foro</a></li>
+        <li><a href="{% url 'contactenos'%}">Contáctenos</a></li>
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </div>
+	
+	 <div class="container" id="content-container">
+		<div class="row">
+			<div class="container content-box form-filler">
+           
+           <ul class="nav nav-tabs nav-justified"> 
+           	<li role="presentation" ><a class="encabezado" href="{% url 'foro'%}">Foro</a>
+           	</li> 
+           	<li role="presentation" class="active"><a class="encabezado" href="#">Crear Temas</a></li> 
+           </ul>
+            
+         </div>
+
+			<div class="row profile">
+        <div class="col-md-3 perfil">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img src="{{ datos.avatar }}" class="img-responsive" alt=""><!--OJO-->
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        Nombre:{{inforP.username}}
+                    </div>
+                    <div class="profile-usertitle-job">
+                        Ranking: {{datos.ranking}}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-9 contenido">
+            <div class="profile-content">
+              <form action="{% url 'crear_tema' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="id_usuario" id="id_usuario" value="{{datos.user_id}}"/>
+               <label for="titulo" id="ELlabel">Titulo:
+               <input name="titulo" id="titulo" type="text" placeholder="Ingresar texto..." autofocus/></label>
+               
+               <hr style="border-top: 1px solid #191717;">
+               <label for="descripcion" id="ELlabel2">Descripción:
+               	<textarea name="descripcion" id="descripcion" type="text" placeholder="Ingresar texto...."/></textarea>
+               </label>
+              
+             
+            </div>
+            <div class="boton">
+              <button type="submit" class="btn btn-floating pulse btn btn-default btn-lg">Publicar
+                </button>
+            </div>
+            </form>
+        </div>
+        
+    
+</div>
+       
+	 </div>
+	</div>
+ 
+	
+	
+	<div class="container content-box follow">
+		<p>Síguenos en: <img src="../img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
+		<img src="../img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">
+		<img src="../img/youtube2-128.png" alt="youtubeIcon" class="icon-inline" height="32" width="32">
+		</p>
+		<p>*Los íconos no están habilitados.</p>
+	</div>
+	
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+	</body>
+</html>

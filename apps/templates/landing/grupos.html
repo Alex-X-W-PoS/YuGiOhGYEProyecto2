@@ -4,16 +4,20 @@
 		<title>Yu-Gi-Oh! Guayaquil</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="descripción" content="Página de contacto Yu-Gi-Oh! Guayaquil"/>
 		<meta name="autores" content="Alex Ferrín, Julio Larrea"/>
     {% load static %}
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+		<link href="{% static 'css/modificaciones_boostrap.css' %}" rel="stylesheet">
 		<link href="{% static 'css/estilo.css' %}" rel="stylesheet">
 		<link href="{% static 'css/modificaciones_boostrap.css' %}" rel="stylesheet">
-		<link href="{% static 'css/estilo_foro.css' %}" rel="stylesheet">
+    <link href="{% static 'css/estilo-grupo.css' %}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="{% static 'bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+
+
+    
 	</head>
 	<body>
     <div class="btn-group">
@@ -43,50 +47,62 @@
                 <li><a href="{% url 'torneos'%}">Torneos</a></li>
         <li><a href="{% url 'timeline'%}">Evolución del Juego</a></li>
         <li><a href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
-        <li class="active"><a href="#">Foro</a></li>
+        <li><a href="{% url 'foro' %}">Foro</a></li>
         <li><a href="{% url 'contactenos'%}">Contáctenos</a></li>
               </ul>
               </ul>
             </div>
+        </nav>
         </nav>
       </div>
     </div>
 	
 	 <div class="container" id="content-container">
 		<div class="row">
-			<div class="container content-box form-filler">
-           
-           <ul class="nav nav-tabs nav-justified"> 
-           	<li role="presentation" class="active"><a class="encabezado" href="#">Foro</a>
-           	</li> 
-           	<li role="presentation"><a class="encabezado" href="{% url 'crear_tema'%}">Crear Temas</a></li> 
-           </ul>
-            <table class="table table-hover">
-                <thead> 
-                	<tr> 
-                		<th class="titul">Tema</th>
-                    <th  class="titul">Comentarios</th>  
-                		<th  class="titul">Fecha</th> 
-                		<th class="titul">Autor</th> 
-                	</tr> 
-                </thead>
+      <div id="cons">
+			    <div class="caja">
+            <a id="scale-demo" href="{% url 'crear_grupo' %}" class="icono boton-flotante boton-largo scale-transition">
+                 <i class="material-icons">add</i>
+               </a>
+            <div class="panel panel-default"> 
+              <div class="panel-heading tabl">Lista de Grupos</div> 
+              <table class="table"> 
+                <thead style="background-color: #f4511e;"> 
+                  <tr> 
+                    <th>#</th> 
+                    <th>Nombres de grupos</th> 
+                    <th>Ver</th> 
+                    <th>Eliminar</th> 
+                  </tr> 
+                </thead> 
                 <tbody> 
-                  {% if lista %}
-                      {% for lis in lista %}
-                	<tr> 
-                		<th scope="row"><i class="material-icons">description</i><a class="letra" href="{% url 'vertema' lis.id %}">{{ lis.titulo}}</a></th> 
-                		<td class="letra" >{{ lis.comentario}}</td> 
-                		<td class="letra" >{{ lis.fecha }}</td> 
-                    <td class="letra">{{ lis.username}}</td> 
-                	</tr> 
-                	 {% endfor %}
-                {% else %}
-                  <h4 style="text-align: center;font-size: 3em;">No existen temas para mostrar</h4>
-                {% endif %}
-                </tbody>
-           </table>
-         </div>
-       
+                  {% if grupo %}
+                    {% for lis in grupo %}
+                  <tr> 
+                    <th scope="row">{{lis.group_id}}</th> 
+                    <td class="tex">{{ lis.nombre }}</td> 
+                    <td class="tex">
+                      <form action="{% url 'verLista' lis.group_id %}" method="get">
+                      <button type="submit" class="btn btn-warning" style="height: 38px;" ><i class="material-icons">visibility</i></button>
+                      </form>
+                    </td>
+
+                    <td class="tex">
+                      <form action="{% url 'eliminar' lis.group_id %}" method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                      </form>
+                    </td> 
+                  </tr> 
+                     {% endfor %}
+                  {% else %}
+                  <h4 style="text-align: center;font-size: 3em;">No existen listas de grupos para mostrar</h4>
+                 {% endif %}
+                </tbody> 
+              </table> 
+            </div>
+          </div>
+       </div>
 	 </div>
 	</div>
  
@@ -104,6 +120,6 @@
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    
+    <script src="{% static 'bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
 	</body>
 </html>

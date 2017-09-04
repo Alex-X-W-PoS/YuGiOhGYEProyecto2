@@ -12,9 +12,8 @@
 		{% load static %}
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/estilocontactenos.css' %}">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 	<body>
 	<div class="navbar-wrapper">
@@ -37,7 +36,7 @@
 					<li><a href="{% url 'torneos'%}">Torneos</a></li>
 					<li><a href="{% url 'timeline'%}">Evolución del Juego</a></li>
 					<li><a href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
-				<li><a href="{% url 'estadisticas'%}">Foro</a></li>
+				<li><a href="{% url 'foro'%}">Foro</a></li>
 				<li class="active"><a href="#">Contáctenos</a></li>
               </ul>
             </div>

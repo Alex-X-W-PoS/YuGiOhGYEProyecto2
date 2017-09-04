@@ -1,0 +1,169 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Yu-Gi-Oh! Guayaquil</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="descripción" content="Página de contacto Yu-Gi-Oh! Guayaquil"/>
+		<meta name="autores" content="Alex Ferrín, Julio Larrea"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+		<link href="{% static 'css/estilo.css' %}" rel="stylesheet">
+		<link href="{% static 'css/modificaciones_boostrap.css' %}" rel="stylesheet">
+		<link href="{% static 'css/estilo_foro.css' %}" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo_comentario.css' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<body>
+	<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi cuenta<span class="caret"></span></button> 
+      <ul class="dropdown-menu"> 
+        <li><a href="#">Registrar</a></li>
+          <li><a href="#">Iniciar Sesion</a></li> 
+      </ul> 
+    </div>
+	<div class="navbar-wrapper">
+      <div class="container" id="nav-container">
+
+        <nav class="navbar navbar-inverse">
+			<div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+			  <p class="navbar-brand hideOnNormal">Barra Navegación</p>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav nav-pills nav-justified">
+                <li><a href="{% url 'home'%}">Principal</a></li>
+                <li><a href="{% url 'productos'%}">Productos</a></li>
+                <li><a href="{% url 'torneos'%}">Torneos</a></li>
+        <li><a href="{% url 'timeline'%}">Evolución del Juego</a></li>
+        <li><a href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
+        <li class="active"><a href="#">Foro</a></li>
+        <li><a href="{% url 'contactenos'%}">Contáctenos</a></li>
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </div>
+	 
+	 <div class="container" id="content-container">
+    <nav aria-label="...">
+        <ul class="pager">
+            <li><a id="volver" href="{% url 'foro' %}">Regresar</a></li>
+        </ul>
+    </nav>
+			<div class="row profile">
+        <div class="col-md-3 perfil">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img src="{{ user.avatar }}" class="img-responsive" alt="">
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        Nombre:{{person.username}}
+                    </div>
+                    <div class="profile-usertitle-job">
+                        Ranking: {{user.ranking}}
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="col-md-9 contenido">
+            <div class="profile-content">
+               <h2 class="temas">{{tema.titulo}}</h2>
+               <h4 class="fechas">Fecha: {{tema.fecha}}</h4>
+               <hr style="border-top: 1px solid #191717;">
+               <p class="contenido4">{{tema.descripcion}}
+               </p>
+             
+            </div>
+            <div class="boton">
+              <button type="button" class="btn btn-floating pulse btn btn-default btn-lg"><i class="material-icons mio">forum</i>
+                </button>
+            </div>
+        </div>
+        
+    
+</div>
+<div class="comentario row">
+   <div class="actionBox">
+        <!--aqui poner la parte de la sesion del usuario -->
+        <form class="form-inline" action="{% url 'vertema' tema.id  %}" method="POST" role="form">  
+          {% csrf_token %}
+            <div class="form-group">
+                <input class="form-control" name="contenido" type="text" placeholder="Escribir..." />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" style="font-size: 2em;font-family:'ygo';" type="submit">Comentar<i class="icono material-icons right mio envio">send</i></button>
+              </div>
+              <!--aqui el id del usuario que comenta-->
+            <input type="hidden" name="id_usuario" style="display:none;" value="7"/>
+        </form>
+    </div>
+</div>
+{% if comentario%}
+   {%for lisc in comentario%}
+<div class="listaComentario">
+
+<div class="col-sm-1 col1">
+     <div class="thumbnail">
+         <img class="img-responsive user-photo" src="{{lisc.avatar}}">
+         <h6 class="nombre"><strong>{{ lisc.username }}</strong> </h6>
+     </div><!-- /thumbnail -->
+</div>
+<div class="col-sm-5 col5">
+    <div class="panel panel-default paneles">
+        <div class="panel-heading subpanel">
+            <span class="text-muted"> {{lisc.hora}} - {{lisc.fecha}} </span>
+        </div>
+       <div class="panel-body">
+              {{ lisc.contenido }}
+       </div><!-- /panel-body -->
+    </div><!-- /panel panel-default -->
+</div>
+</div>
+{% endfor %}
+  {% else %}
+       <h4 style="text-align: center;font-size: 3em;">No existen comentarios para mostrar</h4>
+  {% endif %}
+
+
+
+
+
+</div>
+    </div>
+
+
+
+</div>
+
+</div>
+
+ 
+	
+	
+	<div class="container content-box follow">
+		<p>Síguenos en: <img src="../img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
+		<img src="../img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">
+		<img src="../img/youtube2-128.png" alt="youtubeIcon" class="icon-inline" height="32" width="32">
+		</p>
+		<p>*Los íconos no están habilitados.</p>
+	</div>
+	
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static 'bootstrap-3.3.7/js/bootstrap.min.js' %}"></script>
+	</body>
+</html>
