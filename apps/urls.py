@@ -4,7 +4,7 @@ from apps.views import home, timeline, howToPlay, estadisticas,contactenos, insc
 from apps.producto.views import productos, crearProducto, ajax_get_producto
 from apps.torneo.views import torneos, listarTorneosIndividuales, listarUnTorneoIndividual, editarTorneoIndividual, eliminarTorneoIndividual, crearTorneoIndividual
 from apps.carta.views import crearCarta, listaCartas
-from apps.ygoapp.views import crearUsuario
+from apps.ygoapp.views import crearUsuario, mostrarPerfil,editarPerfil, verGrupos
 from apps.torneo_grupal.views import listarTorneosGrupales, listarUnTorneoGrupal, editarTorneoGrupal, eliminarTorneoGrupal, crearTorneoGrupal
 from apps.ficha_individual.views import crearFichaIndividual
 from apps.ficha_grupal.views import crearFichaGrupal, ingresarFichaGrupal
@@ -36,4 +36,7 @@ urlpatterns = [
     url(r'^registrarTorneoGrupal/(?P<id>\d+)$',crearFichaGrupal, name = 'ficha_torneo_grupal'),
     url(r'^creacionFichaGrupal$',ingresarFichaGrupal, name = 'creacion_ficha_grupal'),
     url(r'^inscripcionExitosa$', inscripcion, name= 'inscripcionExitosa'),
+    url(r'^mostrarPerfil$', mostrarPerfil, name='mostrarPerfil'),
+    url(r'^editarPerfil$', editarPerfil, name='editarPerfil'),
+    url(r'^verGrupos$', verGrupos, name='verGrupos'),
 ]

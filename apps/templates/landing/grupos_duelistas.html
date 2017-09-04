@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+    <head>
+                <title>Yu-Gi-Oh! Guayaquil</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="descripción" content="Página para ver como jugar Yu-Gi-Oh!"/>
+        <meta name="autores" content="Alex Ferrín, Julio Larrea"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilo_moderador.css'%}">
+        <!--link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet"-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link href="{% static 'css/modificaciones_boostrap.css'%}" rel="stylesheet"><body>
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi cuenta<span class="caret"></span></button> 
+      <ul class="dropdown-menu"> 
+        <li><a href="#">Registrar</a></li>
+          <li><a href="../login/login.html">Iniciar Sesion</a></li> 
+      </ul> 
+    </div>
+    <div class="navbar-wrapper">
+      <div class="container" id="nav-container">
+
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <p class="navbar-brand hideOnNormal">Barra Navegación</p>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav nav-pills nav-justified">
+                <li><a href="{% url 'home'%}">Principal</a></li>
+                <li><a href="{% url 'mostrarPerfil'%}">Perfil</a></li>
+                <li><a href="{% url 'productos' %}">Productos</a></li>
+                <li><a href="{% url 'torneos'%}">Torneos</a></li>
+                <li class="active"><a href="#">Evolución del Juego</a></li>
+                <li><a href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
+                <li><a href="{% url 'estadisticas'%}">Foro</a></li>
+                <li><a href="{% url 'contactenos'%}">Contáctenos</a></li>
+                <li><a href="{% url 'mostrarPerfil'%}">Contáctenos</a></li>
+            </ul>  
+            </div>
+        </nav>
+      </div>
+    </div>
+    
+     <div class="container" id="content-container">
+        <div class="row profile">
+        <div class="col-md-3">
+            <div class="profile-sidebar">
+                <!-- SIDEBAR USERPIC -->
+                <div class="profile-userpic">
+                    <img src="{{user2.avatar}}" class="img-responsive" alt="">
+
+                </div>
+                <!-- END SIDEBAR USERPIC -->
+                <!-- SIDEBAR USER TITLE -->
+                <div class="profile-usertitle">
+                    <div class="profile-usertitle-name">
+                        {{user2}}
+                    </div>
+                    <br>
+                    <div class="profile-usertitle-job">
+                        {{user2.rol}}
+                    </div>
+                </div>
+                <!-- END SIDEBAR USER TITLE -->
+
+                <!-- SIDEBAR MENU -->
+                <div class="profile-usermenu">
+                    <ul class="nav">
+                        <li class="active">
+                            <a href="{% url 'mostrarPerfil'%}">
+                            Perfil </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'verGrupos'%}">
+                            Mis Grupos </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                            Mis Fichas  </a>
+                        </li>
+                        
+                        <li>
+                            <a href="{% url 'editarPerfil' %}">
+                            Editar Perfil </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+                <!-- END MENU -->
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="profile-content">
+
+              
+<div class="section">
+            <div class="contenedor">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 style="text-align:center" class="text-center">Grupos Asociados</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        {% for group in grupo%}
+        <div class="section">
+            <div class="contenedor">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-hover ">
+                            <tbody>
+                                <tr>
+                                     <td class="esconder">
+                                        <a href="#"><i class="-alt fa fa-2x fa-eye fa-fw"></i></a>
+                                    </td>
+                                    <td>
+                                        <h4>
+                                            <b>Nombre del Grupo</b>
+                                        </h4>
+
+                                        <h5><b>{{group.nombre}}</b></h5>
+                                    </td>
+
+                                    <td>
+                                        <img src="{{group.imagen}}" class="img-circle" width="60">
+                                    </td>
+                                    <td>
+                                        <h4>
+                                            <b>Fecha de Creación</b>
+                                        </h4>
+                                        <h5>{{group.fecha_creacion}}</h5>
+
+                                        <h4>
+                                            <b>Torneos Ganados</b>
+                                        </h4>
+                                        
+                                        <h5>{{group.torneos_ganados}}</h5>
+                                    </td>
+                                    <td>
+                                       <div class="btn-group botones">
+                                            <button class="btn btn-default" value="left" type="button">
+                                                <i class="fa fa-fw s fa-remove"></i>Salirme</button>
+                                            <button class="btn btn-default" value="right" type="button">
+                                                <i class="fa fa-fw fa-cog"></i>Editar</button>
+                                        </div>
+                                </tr>
+                                
+                                {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+ 
+	
+	
+	<div class="container content-box follow">
+		<p>Síguenos en: <img src="../img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
+		<img src="../img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">
+		<img src="../img/youtube2-128.png" alt="youtubeIcon" class="icon-inline" height="32" width="32">
+		</p>
+		<p>*Los íconos no están habilitados.</p>
+	</div>
+	
+	
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+	</body>
+</html>
