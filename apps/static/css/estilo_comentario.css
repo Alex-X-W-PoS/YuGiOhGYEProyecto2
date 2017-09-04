@@ -1,0 +1,99 @@
+
+.comentario{
+    clear:both;
+    background: #5d5a5a;
+    width: 100%;
+    position: relative;
+    margin-right: 0px;
+    margin-left: 0px;
+
+}
+
+.detailBox {
+    width:320px;
+    border:1px solid #bbb;
+    margin:50px;
+}
+.titleBox {
+    background-color:#fdfdfd;
+    padding:10px;
+}
+.titleBox label{
+  color:#444;
+  margin:0;
+  display:inline-block;
+}
+
+.commentBox {
+    padding:10px;
+    border-top:1px dotted #bbb;
+}
+.commentBox .form-group:first-child, .actionBox .form-group:first-child {
+    width:80%;
+}
+.commentBox .form-group:nth-child(2), .actionBox .form-group:nth-child(2) {
+    width:18%;
+}
+.actionBox .form-group * {
+    width:96%;
+}
+.taskDescription {
+    margin-top:10px 0;
+}
+
+.actionBox {
+    border-top:1px dotted #bbb;
+    padding:10px;
+}
+.icono{
+    width: 90%;
+}
+.listaComentario{
+    width: 100%;
+    overflow: auto;
+    background: #5d5a5a;
+    margin-top: 1%;
+    height: 225px;
+    border: 10px ridge #dadadd;
+}
+.col5{
+    width: 70%;
+    margin: 1%;
+    height: 190px;
+}
+.paneles{
+    width: auto;
+    height: 190px;
+    background-color: #7d7a7a;
+}
+.panel-default>.panel-heading{
+    background-color: #463e3e;
+}
+
+.text-muted {
+    color: #f6fbfb;
+}
+.panel-body{
+    text-align: justify;
+}
+.col1{
+    margin: 1%;
+    width: 14%;
+}
+.thumbnail{
+    margin-bottom: 1px;
+    line-height: 1.42857143;
+    background-color: #7d7a7a;
+    border: 2px solid #ddd;
+    height: 180px;
+}
+.nombre{
+    margin: 2%;
+    text-align: center;
+    font-size: 1em;
+}
+.envio{
+    width: 25% !important;
+    position: relative !important;
+    top: 7px !important; 
+}

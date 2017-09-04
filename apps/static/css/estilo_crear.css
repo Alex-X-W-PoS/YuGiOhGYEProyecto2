@@ -1,0 +1,24 @@
+#ELlabel{
+	color: #5c9bd1;
+    font-size: 2em;
+    
+}
+label{
+	width: 100%;
+}
+
+#descripcion{
+	width: 100%;
+    height: 255px;
+}
+#ELlabel2{
+	color: #5c9bd1;
+    font-size: 2em;
+}
+
+.boton{
+	position: relative;
+    display: inline-block;
+    bottom: 54px;
+    left: 388px;
+}
