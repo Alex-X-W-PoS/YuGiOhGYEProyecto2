@@ -22,6 +22,13 @@
 
 	</head>
 	<body>
+	<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi cuenta <span class="caret"></span></button> 
+      <ul class="dropdown-menu"> 
+        <li><a href="{% url 'mostrarPerfil'%}">Perfil</a></li>
+          <li><a href="../login/login.html">Salir</a></li> 
+      </ul> 
+    </div>
 	<div class="navbar-wrapper">
       <div class="container" id="nav-container">
 

@@ -16,6 +16,13 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	</head>
 	<body>
+	<div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi cuenta <span class="caret"></span></button> 
+      <ul class="dropdown-menu"> 
+        <li><a href="{% url 'mostrarPerfil'%}">Perfil</a></li>
+          <li><a href="../login/login.html">Salir</a></li> 
+      </ul> 
+    </div>
 	<div class="navbar-wrapper">
       <div class="container" id="nav-container">
 

@@ -1,0 +1,23 @@
+.img-responsive{
+	border-radius: 50%;
+}
+
+.content-box{
+	padding: 15px;
+}
+
+h2{
+	color: white;
+}
+
+.profile-usertitle-job{
+	text-align: center;
+	font-size: 1.7em;
+	color: #75dae9;
+}
+
+.profile-usertitle-name{
+	text-align: center;
+	font-size: 1.7em;
+	color: #75dae9;
+}

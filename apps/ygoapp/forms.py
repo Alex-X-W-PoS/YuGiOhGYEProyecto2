@@ -42,5 +42,5 @@ class UserForm (forms.ModelForm):
         'first_name': forms.TextInput(attrs={'class': 'form-control input-md', 'placeholder': 'Nombre:'}),    
         'last_name':forms.TextInput(attrs={'class': 'form-control input-md', 'placeholder': 'Apellido: '}),
         'email': forms.EmailInput(attrs={'class': 'form-control input-md', 'placeholder': 'Email: '}),
-        'password':forms.PasswordInput(attrs={'class': 'form-control input-md', 'placeholder': 'Email: '})
+        'password':forms.PasswordInput(attrs={'class': 'form-control input-md', 'placeholder': 'Contrasenia: '})
         }
