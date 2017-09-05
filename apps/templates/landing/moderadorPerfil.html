@@ -19,13 +19,11 @@
 	</head>
     
 	<body>
-	<div class="btn-group">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi cuenta <span class="caret"></span></button> 
-      <ul class="dropdown-menu"> 
-        <li><a href="{% url 'mostrarPerfil'%}">Perfil</a></li>
-          <li><a href="../login/login.html">Salir</a></li> 
-      </ul> 
-    </div>
+	<div id="topbar">
+		<div id="tbar_mid">
+			<div class="Lang_Navi" id="fl_navi"><span>{{username}}</span> | <a href="{% url 'mostrarPerfil' %}">Mi Perfil</a> | <a href="{% url 'logginOut' %}">Cerrar Sesion  <span class="glyphicon glyphicon-off"></span></a></div>
+		</div>
+	</div>
 	<div class="navbar-wrapper">
       <div class="container" id="nav-container">
 

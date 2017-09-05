@@ -6,13 +6,14 @@ from apps.torneo.models import Torneo_Individual
 from django.core import serializers
 from django.http import HttpResponse
 from apps.torneo.forms import TorneoIndividualForm
+from apps.ficha_individual.models import Ficha_Individual
 
 # Create your views here.
 
 def torneos(request):
     if request.user.is_authenticated:
         print(request.user.username)
-        if request.session['rol']=='administrador':
+        if request.session['rol']=='moderador':
             return render(request,'landing/torneos.html',{'mod': True})
         else:
             return render(request,'landing/torneos.html',{'mod': False})
@@ -72,4 +73,9 @@ def crearTorneoIndividual(request):
         form = TorneoIndividualForm()
         return render(request, 'landing/torneoIndividualCrear.html', {'form': form})
             
+    
+def resultadosTorneoIndividual(request,id):
+    torneo = Torneo_Individual.objects.get(id_torneo=id)
+    fichas = Ficha_Individual.objects.filter(torneo = torneo)
+    return render(request, 'landing/detallesTorneo.html', {'fichas': fichas, 'torneo': torneo})
     

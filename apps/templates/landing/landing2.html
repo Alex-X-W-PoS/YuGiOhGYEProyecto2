@@ -1,0 +1,120 @@
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Yu-Gi-Oh,TCG,KONAMI,EVENTOS" />
+<meta name="description" content="Yu-Gi-Oh! GUAYAQUIL TRADING CARD GAME" />
+<title>Yu-Gi-Oh! JUEGO DE CARTAS COLECCIONABLES</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+<link href="{% static 'css/estilo2.css' %}" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="http://www.yugioh-card.com/yugioh.ico" type="image/x-icon" />
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
+<body>
+
+	<div id="topbar">
+		<div id="tbar_mid">
+			<div class="Lang_Navi" id="fl_navi"><span></span> | <a href="{% url 'mostrarPerfil' %}">Mi Perfil</a> | <a href="{% url 'logginOut' %}">Cerrar Sesion  <span class="glyphicon glyphicon-off"></span></a></div>
+		</div>
+	</div>
+	<div id="wrapper">
+		<div class="navbar-wrapper">
+		  <div class="container" id="nav-container">
+
+			<nav class="navbar navbar-inverse">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+				  <ul class="nav nav-pills nav-justified">
+					<li class="active"><a style="color: #b9b9b9;" href="#">Principal</a></li>
+					<li><a href="{% url 'productos'%}">Productos</a></li>
+					<li><a href="{% url 'torneos'%}">Torneos</a></li>
+					<li><a href="{% url 'timeline'%}">Evolución del Juego</a></li>
+					<li><a href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
+					<li><a href="{% url 'foro'%}">Foro</a></li>
+					<li><a href="{% url 'contactenos'%}">Contáctenos</a></li>
+				  </ul>
+				</div>
+			</nav>
+		  </div>
+		</div>
+		<div  class="container">
+				<table cellpadding="0">
+				  <td height="150"><a href="{% url 'productos'%}"><img class="fullimg" src="/apps/static/img/top_banner.png" border="0"></a></td>
+				</table>
+				<div id="col_spacer"></div>
+				<table cellspacing="0">
+				  <tr>
+					<td align="left"><a href="{% url 'torneos'%}"><img class="fullimg" src="/apps/static/img/main_YCS_banner.gif" border="0"></a></td>
+					
+					<td align="right"><a href="{% url 'torneos'%}"><img class="fullimg" src="/apps/static/img/FOTS_banner.png" alt=""/></a></td>
+					
+				  </tr>
+				</table>
+				<div id="newscolumn">
+					<div id="newscol_header"><img class="fullimg-no" src="/apps/static/img/newsproduct_top.png"/></div>
+					<div id="newscolumn_main" style="overflow:auto;">
+						<table border="0" align="center" cellpadding="3" cellspacing="0" class="tenpoint_table">
+							{% for producto in data %}
+							<tr class="bottom-dot_border" id="{{ producto.codigo }}">
+							  <td align="center" class="bottom-dot_border"><img src="{{ producto.url }}" alt="{{ producto.codigo }}" class="product-image"></td>
+							  <td valign="top" class="bottom-dot_border"><p class="product-title"> {{ producto.nombre }}</p>
+							  
+							  <p class="product-description">{{producto.descripcion}}</p></td>
+							</tr>
+							{% endfor %}
+						</table>
+					</div>
+					<div id="col_footer"><img class="fullimg-no" src="/apps/static/img/newsproduct_btm.png"></div>
+				</div>
+				<div id="mainright">
+						<div id="col_header"><img class="fullimg-no" src="/apps/static/img/newsupdate_top.png"></div>
+						<div id="mainright_content" style="overflow:auto;">
+							<table  border="0" align="center" cellpadding="3" cellspacing="0" class="tenpoint_table">
+								<tr>
+								  <td valign="top"><img id="gif" src="/apps/static/img/tn_update.gif" alt="Update"></td>
+								  <td valign="top"  style="color: white;">6/9/17</td>
+								  <td><p>Hemos publicado información sobre el 2017 Yu-Gi-Oh! TCG World Championship en la seccion de torneos</p></td>
+								</tr>
+								<tr>
+								  <td valign="top"><img id="gif" src="/apps/static/img/tn_update.gif" alt="Update"></td>
+								  <td valign="top" style="color: white;">5/18/17</td>
+								  <td><p>La nueva lista Prohibida y Limitada (entrara en vigencia el 12 de Junio, 2017) ha sido publicado.</p></td>
+								</tr>
+							</table>
+						</div>
+						<div id="col_footer"><img class="fullimg-no" src="/apps/static/img/newsproduct_btm.png"></div>
+				</div>
+			
+		</div>
+		<div id="footer">
+				<div class="container content-box follow">
+				<p>Síguenos en: <a href="https://www.facebook.com/OfficialYuGiOhTCG"><img src="/apps/static/img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"></a>
+				<a href="http://www.youtube.com/OfficialYuGiOhTCG"><img src="/apps/static/img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32"></a>
+				<a href="https://twitter.com/YuGiOh_TCG"><img src="/apps/static/img/youtube2-128.png" alt="youtubeIcon" class="icon-inline" height="32" width="32"></a></p>
+				</div>
+				<div id="FooterMain"> <img src="/apps/static/img/btbar.png"></div>
+			</div>
+			
+		
+		
+		
+	</div>
+</body>
+</html>

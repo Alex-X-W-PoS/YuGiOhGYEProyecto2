@@ -14,14 +14,19 @@ class Tema(models.Model):
     class Meta:
         db_table = 'tema'
 
+    def __str__(self):
+                return self.descripcion
+
 class Comentario(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     contenido = models.TextField()
-    fecha = models.DateField()
-    hora = models.TimeField()
+    fecha = models.DateField(auto_now_add=True)
+    hora = models.TimeField(auto_now_add=True)
     tema = models.ForeignKey(Tema, on_delete=models.CASCADE)
     
     class Meta:
         db_table = 'comentario'
+
+    
 
 

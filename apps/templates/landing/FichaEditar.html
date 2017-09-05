@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Yu-Gi-Oh! Guayaquil</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="descripción" content="Página para ver como jugar Yu-Gi-Oh!"/>
+        <meta name="autores" content="Alex Ferrín, Julio Larrea"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    {% load static %}
+       
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/estilo_editar_jugador.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo_moderador.css'%}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        
+	</head>
+	{% if rol == "jugador" %}
+	<body>
+	{% else %}
+	<body style="background-size:cover;">
+	{% endif %}
+	<div id="topbar">
+		<div id="tbar_mid">
+			<div class="Lang_Navi" id="fl_navi"><span>{{username}}</span> | <a href="{% url 'mostrarPerfil' %}">Mi Perfil</a> | <a href="{% url 'logginOut' %}">Cerrar Sesion  <span class="glyphicon glyphicon-off"></span></a></div>
+		</div>
+	</div>
+	<div class="navbar-wrapper">
+      <div class="container" id="nav-container">
+
+        <nav class="navbar navbar-inverse">
+			<div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+			  <p class="navbar-brand hideOnNormal">Barra Navegación</p>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav nav-pills nav-justified">
+                <li><a href="{% url 'home'%}">Principal</a></li>
+                <li><a href="{% url 'productos' %}">Productos</a></li>
+                <li><a href="{% url 'torneos'%}">Torneos</a></li>
+                <li><a href="{% url 'timeline'%}">Evolución del Juego</a></li>
+                <li><a href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
+                <li><a href="{% url 'foro'%}">Foro</a></li>
+                <li><a href="{% url 'contactenos'%}">Contáctenos</a></li>
+            </ul>  
+            </div>
+        </nav>
+      </div>
+    </div>
+	
+	 <div class="container" id="content-container">
+		<div class="row profile">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-9">
+            <div class="profile-content">
+
+
+<form name="torneo_ind" class="form-horizontal" method="post" enctype="multipart/form-data">
+    <fieldset>
+
+<!-- Form Name -->
+<legend><h1>Editar Ficha</h1></legend>
+
+      {% csrf_token %}
+  
+<!-- Text input-->
+<div class="form-group">
+  <div class="col-md-8">
+    {{ form.as_ul }} 
+    <br>
+  <button style="left=70%" type="submit" class="btn editar btn-primary" id="submit">Editar</button>
+  </div>
+</div>
+
+  
+
+</fieldset>
+</form>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+  <div class="container content-box follow">
+		<p>Síguenos en: <img src="/apps/static/img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
+		<img src="/apps/static/img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">
+		<img src="/apps/static/img/youtube2-128.png" alt="youtubeIcon" class="icon-inline" height="32" width="32">
+		</p>
+		<p>*Los íconos no están habilitados.</p>
+	</div>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static '/js/bootstrap.min.js'%}"></script>
+  </body>
+</html>

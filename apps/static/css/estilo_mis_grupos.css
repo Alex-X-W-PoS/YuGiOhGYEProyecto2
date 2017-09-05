@@ -9,7 +9,10 @@
 .botones{
 	left: 15%;
     top: 0%;
-    width: 100px;
+	margin-top: 5px;
+
+	border-radius: 50px;
+	color: #3D3D58;
 }
 
 .profile-content{
@@ -19,31 +22,29 @@
 }
 
 td h4 b{
-	color: #3D3D58;
+	color: white;
+	font-size:1.3em;
 }
 td p{
-	color: #4D4D58;
+	color: white;
+	font-size:1.3em;
 }
 
 td h5{
-	color: #4D4D58;
+	color: white;
+	font-size:1.3em;
 }
 
 td h5 b{
-	color: #4D4D58;
+	color: white;
+	font-size:1.3em;
 }
 
 
-.table-hover{
+.table{
 	max-width: 100%;
 }
 
-.btn {
-	margin-top: 5px;
-	margin-right: 10px;
-	border-radius: 50px;
-	color: #3D3D58;
-}
 
 
 

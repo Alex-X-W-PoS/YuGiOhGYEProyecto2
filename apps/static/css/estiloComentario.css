@@ -1,0 +1,46 @@
+body{
+	background-size:contain;
+}
+
+.contenido {
+	font-size: 1.4em;
+	margin-top: 8%;
+}
+
+.img-responsive{
+	border-radius: 50%;
+	width: 40%;
+	padding: 5%;
+	margin-left: 30%;
+}
+
+.profile-usertitle-name{
+	text-align: center;
+	color: #75dae9;
+	font-size: 1.5em;
+
+}
+
+.profile-usertitle-job{
+	text-align: center;
+	color: #75dae9;
+	font-size: 1.5em;
+
+}
+
+.bottom-close{
+	border-bottom: 1px solid gray;
+}
+
+textarea{
+	width: 80%;
+	font-size: 1.7em;
+}
+
+.constant{
+	font-size: 1.8em;
+}
+
+.comentar{
+	float: right;
+}

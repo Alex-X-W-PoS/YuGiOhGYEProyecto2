@@ -28,8 +28,8 @@ class Usuario(models.Model):
 	#nombre = models.CharField(db_column='first_name', max_length=30, blank=False, null=False)
 	#apellido = models.CharField(db_column='last_name', max_length=30, blank=False, null=False)
 	#email = models.EmailField(blank=False, null=False)
-	avatar = models.ImageField(upload_to = 'static/media/usuario/',
-                             default = 'static/media/usuario/noimagen.jpg', null=True,
+	avatar = models.ImageField(upload_to = 'apps/static/media/usuario/',
+                             default = 'apps/static/media/usuario/noimagen.jpg', null=True,
                              blank=True, editable=True,
                              help_text="Foto")
 	rol = models.CharField(max_length=30, choices=ROLES, default='jugador')

@@ -1,0 +1,106 @@
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="imagetoolbar" content="no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Yu-Gi-Oh,TCG,KONAMI,EVENTOS" />
+<meta name="description" content="Yu-Gi-Oh! GUAYAQUIL TRADING CARD GAME" />
+<title>Yu-Gi-Oh! JUEGO DE CARTAS COLECCIONABLES</title>
+{% load static %}
+<link href="{% static 'css/estilo.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/estilo2.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'css/estiloestadistica.css' %}" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="http://www.yugioh-card.com/yugioh.ico" type="image/x-icon" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+
+<body>
+	<div id="topbar">
+		<div id="tbar_mid">
+			<div class="Lang_Navi" id="fl_navi"><span>{{username}}</span> | <a href="{% url 'mostrarPerfil' %}">Mi Perfil</a> | <a href="http://www.yugioh-card.com/lat-am/pt/">Cerrar Sesion  <span class="glyphicon glyphicon-off"></span></a></div>
+		</div>
+	</div>
+	<div id="wrapper">
+		<div class="navbar-wrapper">
+		  <div class="container" id="nav-container">
+
+			<nav class="navbar navbar-inverse">
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+				  <ul class="nav nav-pills nav-justified">
+					<li ><a style="color: #b9b9b9;" href="{% url 'home'%}">Principal</a></li>
+					<li><a style="color: #b9b9b9;"href="{% url 'productos'%}">Productos</a></li>
+					<li class="active"><a style="color: #b9b9b9;"href="#">Torneos</a></li>
+					<li><a style="color: #b9b9b9;"href="{% url 'timeline'%}">Evolución del Juego</a></li>
+					<li><a style="color: #b9b9b9;"href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
+					<li><a style="color: #b9b9b9;"href="{% url 'estadisticas'%}">Foro</a></li>
+					<li><a style="color: #b9b9b9;"href="{% url 'contactenos'%}">Contáctenos</a></li>
+				  </ul>
+				</div>
+			</nav>
+		 </div>
+	</div>
+	<div  class="container">
+		<div id="newscolumn">
+					<div id="newscol_header"><img class= "fullimg-no" src="/apps/static/img/top.png"/></div>
+						<div id="newscolumn_main" style="overflow:auto;">
+							<table width="100%" border="0" class="table" id="dataTables-example">
+										<thead class="thead-inverse">
+											<tr>
+												<th class="text-center">Baraja</th>
+												<th class="text-center">Duelistas</th>
+												<th class="text-center">Color</th>
+											</tr>
+											</thead>
+											<tbody>
+												
+													<tr>
+														<td class="capitalize">Zodiac</td>
+														<td class="capitalize">45</td>
+														<td class="capitalize">Rojo</td>
+													</tr>
+													<tr>
+														<td class="capitalize">True Draco</td>
+														<td class="capitalize">20</td>
+														<td class="capitalize">Blanco</td>
+													</tr>
+													<tr>
+														<td class="capitalize">Dino</td>
+														<td class="capitalize">35</td>
+														<td class="capitalize">Gris</td>
+													</tr>
+													<tr>
+														<td class="capitalize">ABC</td>
+														<td class="capitalize">15</td>
+														<td class="capitalize">Morado</td>
+													</tr>
+													<tr>
+														<td class="capitalize">Otros</td>
+														<td class="capitalize">60</td>
+														<td class="capitalize">Azul</td>
+													</tr>
+											
+											</tbody>
+										</table>
+						</div>
+						<div id="col_footer"><img class= "fullimg-no" src="/apps/static/img/newsproduct_btm.png"></div>
+		</div>
+		<div id="mainright">
+						
+		</div>
+	</div>
+	
+	<script src="{%static 'js/estadistica.js'%}"></script>
+</body>

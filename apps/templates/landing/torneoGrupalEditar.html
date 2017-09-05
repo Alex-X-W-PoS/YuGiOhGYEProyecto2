@@ -22,13 +22,11 @@
 
 	</head>
 	<body>
-	<div class="btn-group">
-      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi cuenta <span class="caret"></span></button> 
-      <ul class="dropdown-menu"> 
-        <li><a href="{% url 'mostrarPerfil'%}">Perfil</a></li>
-          <li><a href="../login/login.html">Salir</a></li> 
-      </ul> 
-    </div>
+	<div id="topbar">
+		<div id="tbar_mid">
+			<div class="Lang_Navi" id="fl_navi"><span>{{username}}</span> | <a href="{% url 'mostrarPerfil' %}">Mi Perfil</a> | <a href="{% url 'logginOut' %}">Cerrar Sesion  <span class="glyphicon glyphicon-off"></span></a></div>
+		</div>
+	</div>
 	<div class="navbar-wrapper">
       <div class="container" id="nav-container">
 
@@ -49,7 +47,7 @@
                 <li class="active"><a href="#">Torneos</a></li>
 				<li><a href="{% url 'timeline'%}">Evolución del Juego</a></li>
 				<li><a href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
-				<li><a href="{% url 'estadisticas'%}">Foro</a></li>
+				<li><a href="{% url 'foro'%}">Foro</a></li>
 				<li><a href="{% url 'contactenos'%}">Contáctenos</a></li>
               </ul>
             </div>
@@ -75,9 +73,9 @@
 	</div>
 	
 	<div class="container content-box follow">
-		<p>Síguenos en: <img src="/static/img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
-		<img src="/static/img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">
-		<img src="/static/img/youtube2-128.png" alt="youtubeIcon" class="icon-inline" height="32" width="32">
+		<p>Síguenos en: <img src="/apps/static/img/facebook-icon-2-200x200.png" alt="facebookIcon" class="icon-inline" height="32" width="32"> 
+		<img src="/apps/static/img/1484210852_twitter_letter.png" alt="twitterIcon" class="icon-inline" height="32" width="32">
+		<img src="/apps/static/img/youtube2-128.png" alt="youtubeIcon" class="icon-inline" height="32" width="32">
 		</p>
 		<p>*Los íconos no están habilitados.</p>
 	</div>
@@ -85,6 +83,6 @@
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script type="text/javascript" src="/static/js/consultaTorneo.js"></script>
+	<script type="text/javascript" src="/apps/static/js/consultaTorneo.js"></script>
 	</body>
 </html>

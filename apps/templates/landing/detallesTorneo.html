@@ -1,0 +1,146 @@
+	<!doctype html>
+	<html>
+	<head>
+		<title>Yu-Gi-Oh! Guayaquil</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="descripción" content="Página principal de Yu-Gi-Oh! Guayaquil"/>
+		<meta name="autores" content="Alex Ferrín, Julio Larrea"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/estilodetalle.css' %}">
+		<style>
+        .table > tbody > tr > td { vertical-align: middle; }
+        #dataTables-example_filter, #dataTables-example_paginate { text-align: right; }
+        .pagination {margin: 0 0;}
+		</style>
+		{% block scriptUp %}{% endblock %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<!-- DataTables CSS -->
+		<link href="{% static 'vendor/datatables-plugins/dataTables.bootstrap.css' %}" rel="stylesheet">
+		<!-- DataTables Responsive CSS -->
+		<link href="{% static 'vendor/datatables-responsive/dataTables.responsive.css' %}" rel="stylesheet">
+
+		<!-- DataTables JavaScript -->
+		<script src="{% static 'apps/static/vendor/datatables/js/jquery.dataTables.min.js' %}"></script>
+		<script src="{% static 'apps/static/vendor/datatables-plugins/dataTables.bootstrap.min.js' %}"></script>
+		<script src="{% static 'apps/static/vendor/datatables-responsive/dataTables.responsive.js' %}"></script>
+
+		<script>
+		$(document).ready(function() {
+			$('#dataTables-example').DataTable({
+				responsive: true,
+				"language": {
+
+					"sProcessing":     "Procesando...",
+					"sLengthMenu":     "Mostrar _MENU_ registros",
+					"sZeroRecords":    "No se encontraron resultados",
+					"sEmptyTable":     "Ningún dato disponible en esta tabla",
+					"sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+					"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+					"sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+					"sInfoPostFix":    "",
+					"sSearch":         "",
+					search: "_INPUT_",
+					searchPlaceholder: "Buscar...",
+					"sUrl":            "",
+					"sInfoThousands":  ",",
+					"sLoadingRecords": "Cargando...",
+					"oPaginate": {
+					"sFirst":    "Primero",
+					"sLast":     "Último",
+					"sNext":     "Siguiente",
+					"sPrevious": "Anterior"
+					},
+					"oAria": {
+					"sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+					"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+					}
+
+					}
+				});
+		});
+		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	</head>
+	<body>
+	<div id="topbar">
+		<div id="tbar_mid">
+			<div class="Lang_Navi" id="fl_navi"><span>{{username}}</span> | <a href="{% url 'mostrarPerfil' %}">Mi Perfil</a> | <a href="{% url 'logginOut' %}">Cerrar Sesion  <span class="glyphicon glyphicon-off"></span></a></div>
+		</div>
+	</div>
+	<div class="navbar-wrapper">
+      <div class="container" id="nav-container">
+
+        <nav class="navbar navbar-inverse">
+			<div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+			  <p class="navbar-brand hideOnNormal">Barra Navegación</p>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav nav-pills nav-justified">
+                <li><a href="{% url 'home'%}">Principal</a></li>
+                <li><a href="{% url 'productos'%}">Productos</a></li>
+                <li class="active"><a href="#">Torneos</a></li>
+				<li><a href="{% url 'timeline'%}">Evolución del Juego</a></li>
+				<li><a href="{% url 'howToPlay'%}">Cómo se Juega</a></li>
+				<li><a href="{% url 'foro'%}">Foro</a></li>
+				<li><a href="{% url 'contactenos'%}">Contáctenos</a></li>
+              </ul>
+            </div>
+        </nav>
+      </div>
+    </div>
+	<div class="container">
+		<div id="page-wrapper">
+			<div class="container-fluid">
+				<div class="panel panel-default" style="margin-top: 40px">
+					<div class="panel-heading titulo1"><h4><b>Participantes del torneo {{ torneo }}</b></h4></div>
+					<div class="panel-body">
+							<div class="container-fluid">
+								<div class="row">
+									<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+										<thead class="thead-inverse">
+											<tr>
+												<th class="text-center titulo1">Usuario</th>
+												<th class="text-center titulo1">Nombre</th>
+												<th class="text-center titulo1">Apellido</th>
+												<th class="text-center titulo1">Baraja</th>
+												<th class="text-center titulo1">Duelos Ganados</th>
+											</tr>
+											</thead>
+											<tbody>
+											{% for ficha in fichas %}
+												
+													<tr>
+														<td class="capitalize">{{ ficha.duelista.usuario.usuario.username }}</td>
+														<td class="capitalize">{{ ficha.duelista.usuario.usuario.first_name }}</td>
+														<td class="capitalize">{{ ficha.duelista.usuario.usuario.last_name }}</td>
+														<td class="capitalize">{{ ficha.deck}}</td>
+														<td class="capitalize">6</td>
+													</tr>
+											{% endfor %}
+											</tbody>
+										</table>
+									</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	</body>
+	
+	
+	

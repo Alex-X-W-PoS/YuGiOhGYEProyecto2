@@ -2,8 +2,18 @@
 
 @font-face {
     font-family: ygo;
-    src: url("/static/fonts/Yu-Gi-Oh! Matrix Regular Small Caps 1.ttf");
+    src: url("../fonts/Yu-Gi-Oh! Matrix Regular Small Caps 1.ttf");
 }
+
+div#fl_navi{
+	width: 19%;
+	margin-left: auto;
+	margin-right: 1%;
+	background-color:#000000;
+	text-align:right;
+	color:#20B2AA;
+	font-size: 1.4em;
+	}
 
 
 body {
